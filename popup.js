@@ -1,4 +1,5 @@
 // LinkedIn Recruiter & Outsourcing Identifier - Popup Script
+// NOTE: Keep these keyword lists in sync with TAG_CATEGORIES in content.js
 
 const TAG_CATEGORIES = [
   {
@@ -7,21 +8,41 @@ const TAG_CATEGORIES = [
     keywords: [
       'recruiter', 'recruiting', 'recruitment',
       'talent acquisition', 'talent partner', 'talent scout', 'talent sourcer',
-      'headhunter', 'staffing', 'sourcer', 'sourcing specialist',
-      'executive search', 'human resources', 'hr director', 'hr manager',
-      'hr business partner', 'people operations', 'people partner',
-      'hiring', 'open role', 'open position', 'job opportunity',
+      'headhunter', 'head hunter',
+      'staffing',
+      'sourcer', 'sourcing specialist',
+      'executive search',
+      'human resources', 'hr director', 'hr manager', 'hr business partner', 'hr generalist',
+      'people operations', 'people partner',
+      'campus recruiter', 'technical recruiter', 'senior recruiter', 'lead recruiter',
+      'hiring',
+      "we're looking for", "i'm looking for",
+      'open role', 'open position', 'job opportunity',
     ],
   },
   {
     label: 'Outsourcing',
     color: '#8E44AD',
     keywords: [
-      'outsourcing', 'outstaffing', 'remote services', 'remote team',
-      'dedicated team', 'staff augmentation', 'offshore', 'nearshore',
-      'development services', 'it teams', 'cloud solutions',
-      'scale with', 'scale smarter', 'helping businesses scale',
-      'helping startups scale', 'helping enterprises scale',
+      'outsourcing', 'outstaffing',
+      'remote services', 'remote team', 'remote developers',
+      'dedicated team', 'dedicated developers',
+      'staff augmentation',
+      'offshore', 'nearshore',
+      'developers for hire',
+      'development services',
+      'it teams', 'it staff',
+      'cloud solutions',
+      'scale with',
+      'scale smarter',
+      'helping businesses scale',
+      'helping startups scale',
+      'helping enterprises scale',
+      'helping companies scale',
+      'solutions consultant',
+      'web, mobile',
+      'ai/ml',
+      'llm development',
     ],
   },
 ];
@@ -49,14 +70,14 @@ TAG_CATEGORIES.forEach((cat) => {
 });
 
 // Load current state
-chrome.storage.sync.get({ enabled: true }, ({ enabled }) => {
+chrome.storage.local.get({ enabled: true }, ({ enabled }) => {
   toggle.checked = enabled;
 });
 
 // Handle toggle
 toggle.addEventListener('change', () => {
   const enabled = toggle.checked;
-  chrome.storage.sync.set({ enabled });
+  chrome.storage.local.set({ enabled });
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs[0]?.id) {

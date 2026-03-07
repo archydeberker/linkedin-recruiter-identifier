@@ -169,8 +169,11 @@ function tagCard(card, titleEl) {
   if (!category) return;
 
   card.classList.add(category.cardClass);
-  const target = titleEl || card;
-  target.insertAdjacentElement('afterend', createBadge(category));
+  if (titleEl) {
+    titleEl.insertAdjacentElement('afterend', createBadge(category));
+  } else {
+    card.insertAdjacentElement('beforeend', createBadge(category));
+  }
 }
 
 function processPage() {
@@ -236,7 +239,7 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 // Initialize
-chrome.storage.sync.get({ enabled: true }, ({ enabled }) => {
+chrome.storage.local.get({ enabled: true }, ({ enabled }) => {
   isEnabled = enabled;
   if (isEnabled) {
     processPage();
