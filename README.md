@@ -2,6 +2,10 @@
 
 A Chrome extension that adds colored badges to LinkedIn profiles, making it easy to spot recruiters and outsourcing pitches at a glance.
 
+## Why
+
+I get an enormous amount of inbound connections & messages from recruiters and outsourcing companies. These are always a waste of time, and increasingly crafty. This is an attempt to help spot and handle them efficiently!
+
 ## What it does
 
 The extension scans LinkedIn pages for keywords in job titles and invitation messages, then tags matching profiles with a visible badge:
@@ -11,10 +15,10 @@ The extension scans LinkedIn pages for keywords in job titles and invitation mes
 
 It works across:
 - **My Network** — invitation cards and "People You May Know"
-- **Invitation Manager** — pending connection requests
 - **Search results** — people search
 - **Feed** — post authors
 - **Profile pages** — individual profiles
+- **Connections list** — your existing connections
 
 ## Install from source
 
