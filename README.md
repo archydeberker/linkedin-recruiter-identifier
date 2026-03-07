@@ -11,10 +11,10 @@ The extension scans LinkedIn pages for keywords in job titles and invitation mes
 
 It works across:
 - **My Network** — invitation cards and "People You May Know"
-- **Invitation Manager** — pending connection requests
 - **Search results** — people search
 - **Feed** — post authors
 - **Profile pages** — individual profiles
+- **Connections list** — your existing connections
 
 ## Install from source
 
