@@ -80,7 +80,7 @@ To add a new category, add another entry with a unique `id`, `cssClass`, and `ca
 
 - LinkedIn occasionally changes their DOM structure. The extension uses resilient selectors (ARIA roles, `componentkey` attributes) but may need updates if LinkedIn does a major redesign.
 - Keyword matching is substring-based — "hiring" will match "hiring manager" but also "admiring". This is generally fine for LinkedIn headlines but could produce occasional false positives.
-- The extension only runs on `linkedin.com`. It does not collect, store, or transmit any data.
+- The extension only runs on `linkedin.com`. It does not collect or transmit any data. Your on/off preference is saved locally using Chrome's storage API.
 
 ## License
 

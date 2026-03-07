@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "LinkedIn Recruiter Identifier",
   "version": "1.0.0",
-  "description": "Clearly identifies recruiters on LinkedIn profiles, search results, and feed",
+  "description": "Badges recruiters and outsourcing pitches on LinkedIn profiles, search results, and feed",
   "permissions": ["storage"],
   "host_permissions": ["https://www.linkedin.com/*"],
   "content_scripts": [
